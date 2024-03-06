@@ -6,10 +6,7 @@ function App() {
     <>
       <LineProgressBar 
         Title={"HTML"}
-        Percentage={60}
-        BgColor={"#424242"}
-        FontColor={"#ffffff"}
-        BarColor={"#cbb22"}
+        Percentage={10}
       />
     </>
   )
