@@ -1,0 +1,74 @@
+:root {
+    --tooltip-bg-color: #007bff; // Default tooltip background color
+    --animation-time: 0.3s;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    padding: 1px 20px;
+    margin: 0 15px;
+    border-radius: 7px;
+
+}
+
+.container , .progress-bar-box{
+    width: 100%;
+    margin: 25px 0;
+}
+
+.progress-bar-box , .title{
+    display: block;
+    font-weight: 600;
+}
+
+.progress-bar-box , .progress-bar{
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 8px;
+}
+
+.progress-bar , .progress-bar-per{
+    height: 100%;
+    position: relative;
+    border-radius: 6px;
+}
+
+.progress-bar-per , .percentage{
+    position: absolute;
+    font-weight: 600;
+    display: block;
+    animation: anim var(--animation-time) ease-in-out forwards ;
+}
+
+.percentage , .tool-tip{
+    right: -14px;
+    top: 18px;
+    font-size: 14px;
+    border-radius: 3px;
+    padding: 2px 3px;
+    z-index: 1;
+}
+
+.tool-tip::before{
+    content: " ";
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background-color: var(--tooltip-bg-color);
+    top: -5px;
+    left: 50%;
+    z-index: -2;
+    transform: translateX(-10%) rotate(45deg);
+}
+
+@keyframes anim{
+    0%{
+        opacity: 0;
+        width: 0%;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
